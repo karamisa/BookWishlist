@@ -132,7 +132,7 @@ function _createBooks() {
     ];
     const books = booksDATA.map((book) => {
       book._id = utilService.makeId();
-      book.isInWishlist = false;
+      book.isInWishlist = true;
       return book;
     });
 
