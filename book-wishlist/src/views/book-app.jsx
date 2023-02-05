@@ -26,7 +26,7 @@ export function BookApp(){
         
     }
 
-    if (!books) return <div>Loading...</div>
+    if (!books || !books.length) return <div>Loading...</div>
     return (
         <div className="book-app flex">
         <BookDetails books={books} onToggleWishlist={onToggleWishlist}/>

@@ -12,7 +12,7 @@ export function BookDetails({ books, onToggleWishlist }) {
   }
 
   const book = books[index];
-  if (!books.length) return <div>Loading...</div>;
+  if (!books.length) return <div>No books to show</div>
   return (
       <div className="book-details-container flex">
         <div className="slider">

@@ -25,7 +25,7 @@ export function BookWishlist({ books, onToggleWishlist }) {
     setSortBy(sortBy);
   }
 
-  if (!likedBooks.length) return <div>No books in wishlist</div>;
+  if (!likedBooks.length) return 
   return (
     <div className="wishlist-container">
       <div className="wishlist-sortBy">

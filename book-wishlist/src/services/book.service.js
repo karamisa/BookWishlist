@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const { storageService } = require("./async-storage.service");
 const { utilService } = require("./util.service");
 
@@ -19,9 +17,10 @@ window.us = bookService;
 async function query(filterBy = {}) {
   //CHANGE TO HTTP REQUEST TO WORK WITH API
   return storageService.query(BOOK_KEY);
-  // const response = await axios.get('http://s3.amazonaws.com/sundaysky-mock/books/listOfBooks.json')
-    // return response.data;
+
 }
+
+
 
 function get(bookId) {
   return storageService.get(BOOK_KEY, bookId);
