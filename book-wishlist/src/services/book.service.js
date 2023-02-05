@@ -9,8 +9,7 @@ export const bookService = {
   query,
   get,
   save,
-  addToWishlist,
-  removeFromWishlist,
+  toggleToWishlist
 };
 
 window.us = bookService;
@@ -29,23 +28,13 @@ function save(book) {
   else return storageService.post(BOOK_KEY, book);
 }
 
-async function addToWishlist(bookId) {
+async function toggleToWishlist(bookId) {
   try {
     const bookToLike = await get(bookId);
-    bookToLike.isInWishlist = true;
+    bookToLike.isInWishlist = !bookToLike.isInWishlist;
     save(bookToLike);
   } catch (err) {
     console.log("Cannot like book", err);
-  }
-}
-
-async function removeFromWishlist(bookId) {
-  try {
-    const bookToUnlike = await get(bookId);
-    bookToUnlike.isInWishlist = false;
-    save(bookToUnlike);
-  } catch (err) {
-    console.log("Cannot unlike book", err);
   }
 }
 

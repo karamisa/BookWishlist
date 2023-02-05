@@ -15,10 +15,16 @@ export function BookApp(){
         setBooks(books)
     }
 
+
+    async function onToggleWishlist(bookId){
+        const books = await bookService.toggleToWishlist(bookId)
+        setBooks(books)
+    }
+
     return (
         <div className="flex">
-        <BookDetails books={books}/>
-        <BookWishlist books={books} />
+        <BookDetails books={books} onToggleWishlist={onToggleWishlist}/>
+        <BookWishlist books={books} onToggleWishlist={onToggleWishlist}/>
         </div>
     )
 }
